@@ -1,1 +1,48 @@
+body {
+    background-attachment:fixed;
+    margin: 0px;
+    text-align: center;
+}
 
+.overallContainer{
+    padding-top: 10%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 90px 30px 200px 60px;
+    grid-template-columns: 20% 1fr 20%;
+    grid-template-areas:
+    ". title ."
+    ". score ."
+    ". dice ."
+    ". number ."
+    ;
+}
+
+#title {
+    grid-area: title; padding-top: 6px;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#currentScore {
+    grid-area: score; padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    
+}
+
+#dice {
+    grid-area: dice;
+}
+
+#dice img{
+    width: 160px;
+}
+
+#currentNumber {
+    grid-area: number; padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
