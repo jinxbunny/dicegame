@@ -8,13 +8,15 @@ body {
     padding-top: 10%;
     width: 100%;
     display: grid;
-    grid-template-rows: 90px 30px 200px 60px;
+    grid-template-rows: 90px 30px 30px 200px 60px 60px inherit;
     grid-template-columns: 20% 1fr 20%;
     grid-template-areas:
     ". title ."
     ". score ."
+    ". winLoose ."
     ". dice ."
-    ". number ."
+    ".roll."
+    ". history ."
     ;
 }
 
@@ -26,8 +28,19 @@ h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 #currentScore {
     grid-area: score; padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    
+}
+
+#winLoose {
+    grid-area: winLoose; padding-top: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     
@@ -38,11 +51,26 @@ h1 {
 }
 
 #dice img{
+    
     width: 160px;
 }
 
-#currentNumber {
-    grid-area: number; padding-top: 20px;
+#roll {
+    grid-area: roll; padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+    
+}
+#rollBtn{
+    display: inline-block;
+    width: 100px; padding: 10px; border-radius: 12px;
+    cursor: pointer; user-select: none;
+    background-color: rgb(40, 127, 174);
+}
+
+#history {
+    grid-area: history; padding-top: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
