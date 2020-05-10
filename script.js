@@ -1,35 +1,58 @@
-const diceImg = document.getElementById("diceImg");
-const diceNum = document.getElementById("currentNumber");
-const diceScore = document.getElementById("currentScore");
-const rollBtn = document.getElementById("rollBtn")
-const winLoose = document.getElementById("winLoose")
-var randomNumber = 0;
-var score = 0;
-var timesRolled = 0;
-var gameStat = "won";
+const diceImg = document.getElementById(`diceImg`);
+const diceNum = document.getElementById(`currentNumber`);
+const diceScore = document.getElementById(`currentScore`);
+const rollBtn = document.getElementById(`rollBtn`);
+const winLoose = document.getElementById(`winLoose`);
+const list = document.getElementById('past');
+//history
+const history = document.getElementById(`history`);
+const histBtn = document.getElementById(`histBtn`);
+const modalBG = document.getElementById(`modal-bg`);
+const closeMBtn = document.getElementById(`closeModal`);
+//dice design
+const diceChoise = document.getElementById(`diceChoice`);
+const pickBtn = document.getElementById(`pickBtn`);
+const modalBG2 = document.getElementById(`modal-bg2`);
+const whiteBtn = document.getElementById(`whiteBtn`);
+const blueBtn = document.getElementById(`blueBtn`);
+const pinkBtn = document.getElementById(`pinkBtn`);
+
+let diceChoice = "white";
+let randomNumber = 0;
+let score = 0;
+let timesRolled = 0;
+let padding = 100;
 
 
 if (score == 0){
-     diceImg.style.opacity="0";
+     diceImg.style.opacity=`0`;
 }
 
+histBtn.addEventListener(`click`, () => {
+    modalBG.style.opacity=`1`;
+    modalBG.style.visibility= `visible`;
+});
 
-rollBtn.addEventListener('click', () => {
-    if (score < 21){
-        diceImg.style.opacity="1";
+closeMBtn.addEventListener(`click`, () => {
+    modalBG.style.opacity=`0`;
+    modalBG.style.visibility= `hidden`;
+});
+
+rollBtn.addEventListener(`click`, () => {
+    if (score <20 & randomNumber !=1){
+        diceImg.style.opacity=`1`;
         //show a blurred dice image for 100ms
         //then start the Randomiser function
-        diceImg.src="img/whitedice7.png";
+        diceImg.src=`img/${diceChoice}dice7.png`;
         setTimeout('Randomiser();', 100);
     } else {
         //if game is over, reset everything
         score = 0;
         randomNumber=0;
         timesRolled=0;
-        diceImg.style.opacity="0";
+        diceImg.style.opacity=`0`;
         rollBtn.textContent=(`Roll`);
         rollBtn.style.backgroundColor = `rgb(40, 127, 174)`;
-        rollBtn.style.marginTop=`0px`;
         winLoose.textContent=(``);
         diceScore.textContent=(`Roll To Score`);
     }
@@ -40,7 +63,7 @@ const Randomiser = () => {
     i=Math.floor((Math.random() * 6) + 1);
     randomNumber = i;
     //ammend the image name to corrispond with the newly generated random number
-    diceImg.src=`img/whitedice${randomNumber}.png`;
+    diceImg.src=`img/${diceChoice}dice${randomNumber}.png`;
     //add that random numnber to the over all score
     score += i;
     //count how many times the player rolled the dice 
@@ -49,20 +72,61 @@ const Randomiser = () => {
     // diceNum.textContent=(`You Rolled: ${randomNumber}`);
     //display the current total score
     diceScore.textContent=(`Your Total Score: ${score}`);
+    console.log(randomNumber);
     console.log(score);
-    if (score == 21){
+    if (randomNumber == 1){
+        diceScore.textContent= (`Your Final Score: ${score}`);
+        winLoose.textContent= (`You Lost After ${timesRolled} Rolls!`);
+        //change roll button to say play again
+        rollBtn.textContent= (`Play Again`);
+        rollBtn.style.backgroundColor= `rgb(157, 55, 65`;
+        //store a loss in the history list
+        let listItem= document.createElement('li');
+        listItem.textContent= (`Lost with ${score} Points in ${timesRolled} Rolls`);
+        list.appendChild(listItem);
+        // padding += 18;
+        // history.style.paddingBottom= `${padding}px`;
+    } else if (score >19 && randomNumber!=0){
         diceScore.textContent=(`Your Final Score: ${score}`);
         winLoose.textContent=(`You Won With ${timesRolled} Rolls!`);
+        //change roll button to say play again
         rollBtn.textContent=(`Play Again`)
-        rollBtn.style.backgroundColor = `rgb(157, 55, 65`;
-        rollBtn.style.marginTop=`50px`;
-    } else if (score > 21){
-        diceScore.textContent=(`Your Final Score: ${score}`);
-        winLoose.textContent=(`You Lost After ${timesRolled} Rolls!`);
-        rollBtn.textContent=(`Play Again`);
-        rollBtn.style.marginTop=`50px`;
-        rollBtn.style.backgroundColor = `rgb(157, 55, 65`;
+        rollBtn.style.backgroundColor= `rgb(157, 55, 65`;
+        //store a win in the history list
+        let listItem= document.createElement('li');
+        listItem.textContent= (`Won with ${score} Points in ${timesRolled} Rolls`);
+        list.appendChild(listItem);
+        // padding += 18;
+        // history.style.paddingBottom= `${padding}px`;
     } else {
         winLoose.textContent+= `.`;
     }
 };
+
+//Dice Choice Code
+
+pickBtn.addEventListener(`click`, () => {
+    modalBG2.style.opacity=`1`;
+    modalBG2.style.visibility= `visible`;
+});
+
+whiteBtn.addEventListener(`click`, () => {
+    modalBG2.style.opacity=`0`;
+    modalBG2.style.visibility= `hidden`;
+    diceChoice = `white`;
+    diceImg.src=`img/${diceChoice}Dice${randomNumber}.png`;
+});
+
+blueBtn.addEventListener(`click`, () => {
+    modalBG2.style.opacity=`0`;
+    modalBG2.style.visibility= `hidden`;
+    diceChoice = `blue`;
+    diceImg.src=`img/${diceChoice}Dice${randomNumber}.png`;
+});
+
+pinkBtn.addEventListener(`click`, () => {
+    modalBG2.style.opacity=`0`;
+    modalBG2.style.visibility= `hidden`;
+    diceChoice = `pink`;
+    diceImg.src=`img/${diceChoice}Dice${randomNumber}.png`;
+});
