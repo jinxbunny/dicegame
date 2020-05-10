@@ -43,7 +43,7 @@ rollBtn.addEventListener(`click`, () => {
         diceImg.style.opacity=`1`;
         //show a blurred dice image for 100ms
         //then start the Randomiser function
-        diceImg.src=`img/${diceChoice}dice7.png`;
+        diceImg.src=`img/${diceChoice}Dice7.png`;
         setTimeout('Randomiser();', 100);
     } else {
         //if game is over, reset everything
