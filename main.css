@@ -2,10 +2,11 @@ body {
     background-attachment:fixed;
     margin: 0px;
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .overallContainer{
-    padding-top: 10%;
+    padding-top: 4%;
     width: 100%;
     display: grid;
     grid-template-rows: 90px 30px 30px 200px 60px 60px 100px;
@@ -25,13 +26,6 @@ body {
     grid-area: title;
 }
 
-h1 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-h2 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 
 #currentScore {
     grid-area: score;

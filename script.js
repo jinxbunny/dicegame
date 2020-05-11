@@ -3,8 +3,8 @@ const diceNum = document.getElementById(`currentNumber`);
 const diceScore = document.getElementById(`currentScore`);
 const rollBtn = document.getElementById(`rollBtn`);
 const winLoose = document.getElementById(`winLoose`);
-const list = document.getElementById('past');
 //history
+const list = document.getElementById('past');
 const history = document.getElementById(`history`);
 const histBtn = document.getElementById(`histBtn`);
 const modalBG = document.getElementById(`modal-bg`);
@@ -29,12 +29,10 @@ if (score == 0){
 }
 
 histBtn.addEventListener(`click`, () => {
-    modalBG.style.opacity=`1`;
     modalBG.style.visibility= `visible`;
 });
 
 closeMBtn.addEventListener(`click`, () => {
-    modalBG.style.opacity=`0`;
     modalBG.style.visibility= `hidden`;
 });
 
@@ -130,3 +128,5 @@ pinkBtn.addEventListener(`click`, () => {
     diceChoice = `pink`;
     diceImg.src=`img/${diceChoice}Dice${randomNumber}.png`;
 });
+
+//Winner Crown

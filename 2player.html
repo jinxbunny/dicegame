@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Player Dice Game</title>
+    <link rel="stylesheet" type="text/css" href="2player.css">
+</head>
+<body>
+    <div class="overallContainer">
+        <div id="title"><h1>Two PlayerDice Game</h1></div>
+        <div class="playerbox" id="player1">
+            <h2 id="p1Title">Player 1</h2>
+            <h2 id="p1ScoreShow">0</h2>
+            <div id="p1cs">
+                Current
+            <div id=p1CurrentShow>0</div>
+            </div>
+        </div>
+        <div class="playerbox" id="player2">
+            <h2 id="p2Title">Player 2</h2>
+            <h2 id="p2ScoreShow">0</h2>
+            <div id="p2cs">
+                Current
+            <div id="p2CurrentShow">0</div>
+        </div>
+        </div>
+    </div>
+<div id="diceOver">
+    <div id="dice">
+        <div id="newBtn">New Game</div>
+        <div id="histBtn">History</div>
+        <img id= "diceImg"src="img/whiteDice1.png">
+        <div id="rollBtn">Roll Dice</div>
+        <div id="spacer"></div>
+        <div id="holdBtn">Hold</div>
+    </div>
+</div>
+
+<div id="modal-bg">
+        <div id="history"><h2>History</h2>
+            <ol id="past">
+            </ol>
+            <div id="closeModal">x</div>
+        </div>
+    </div>
+    
+    <!-- <div id="modal-bg2">
+        <div id="diceChoice"><h2>Pick Your Dice</h2>
+            <img id="whiteBtn" src="img/WhiteDiceIcon.png">
+            <img id="blueBtn" src="img/BlueDiceIcon.png">
+            <img id="pinkBtn" src="img/PinkDiceIcon.png">
+        </div>
+    </div> -->
+    
+    <script src="script2.js"></script>
+</body>
+</html>
