@@ -94,7 +94,7 @@ rollBtn.addEventListener(`click`, () => {
 const Randomiser = () => {
     i=Math.floor((Math.random() * 6) + 1);
     randomNumber = i;
-    diceImg.src=`img2/${diceChoice}dice${randomNumber}.png`;
+    diceImg.src=`img2/${diceChoice}Dice${randomNumber}.png`;
     timesRolled ++;
     console.log(randomNumber);
     if (player == 1 && randomNumber != 1 ){
