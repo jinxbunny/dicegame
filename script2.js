@@ -86,7 +86,7 @@ newBtn.addEventListener('click', () =>{
 rollBtn.addEventListener(`click`, () => {
         //show a blurred dice image for 100ms
         //then start the Randomiser function
-        diceImg.src=`img/${diceChoice}Dice7.png`;
+        diceImg.src=`img2/${diceChoice}Dice7.png`;
         setTimeout('Randomiser();', 100);
 });
 
@@ -94,7 +94,7 @@ rollBtn.addEventListener(`click`, () => {
 const Randomiser = () => {
     i=Math.floor((Math.random() * 6) + 1);
     randomNumber = i;
-    diceImg.src=`img/${diceChoice}dice${randomNumber}.png`;
+    diceImg.src=`img2/${diceChoice}dice${randomNumber}.png`;
     timesRolled ++;
     console.log(randomNumber);
     if (player == 1 && randomNumber != 1 ){

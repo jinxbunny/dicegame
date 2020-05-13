@@ -41,7 +41,7 @@ rollBtn.addEventListener(`click`, () => {
         diceImg.style.opacity=`1`;
         //show a blurred dice image for 100ms
         //then start the Randomiser function
-        diceImg.src=`img/${diceChoice}Dice7.png`;
+        diceImg.src=`img2/${diceChoice}Dice7.png`;
         setTimeout('Randomiser();', 100);
     } else {
         //if game is over, reset everything
@@ -61,7 +61,7 @@ const Randomiser = () => {
     i=Math.floor((Math.random() * 6) + 1);
     randomNumber = i;
     //ammend the image name to corrispond with the newly generated random number
-    diceImg.src=`img/${diceChoice}Dice${randomNumber}.png`;
+    diceImg.src=`img2/${diceChoice}Dice${randomNumber}.png`;
     //add that random numnber to the over all score
     score += i;
     //count how many times the player rolled the dice 
@@ -112,21 +112,19 @@ whiteBtn.addEventListener(`click`, () => {
     modalBG2.style.opacity=`0`;
     modalBG2.style.visibility= `hidden`;
     diceChoice = `white`;
-    diceImg.src=`img/${diceChoice}Dice${randomNumber}.png`;
+    diceImg.src=`img2/${diceChoice}Dice${randomNumber}.png`;
 });
 
 blueBtn.addEventListener(`click`, () => {
     modalBG2.style.opacity=`0`;
     modalBG2.style.visibility= `hidden`;
     diceChoice = `blue`;
-    diceImg.src=`img/${diceChoice}Dice${randomNumber}.png`;
+    diceImg.src=`img2/${diceChoice}Dice${randomNumber}.png`;
 });
 
 pinkBtn.addEventListener(`click`, () => {
     modalBG2.style.opacity=`0`;
     modalBG2.style.visibility= `hidden`;
     diceChoice = `pink`;
-    diceImg.src=`img/${diceChoice}Dice${randomNumber}.png`;
+    diceImg.src=`img2/${diceChoice}Dice${randomNumber}.png`;
 });
-
-//Winner Crown
