@@ -61,7 +61,7 @@ const Randomiser = () => {
     i=Math.floor((Math.random() * 6) + 1);
     randomNumber = i;
     //ammend the image name to corrispond with the newly generated random number
-    diceImg.src=`img/${diceChoice}dice${randomNumber}.png`;
+    diceImg.src=`img/${diceChoice}Dice${randomNumber}.png`;
     //add that random numnber to the over all score
     score += i;
     //count how many times the player rolled the dice 
