@@ -20,12 +20,13 @@ let p1Score = 0;
 let p1Current = 0;
 let p2Score = 0;
 let p2Current = 0;
-let diceChoice = `white`;
 let randomNumber = 0;
 let gamesPlayed = 0;
 let timesRolled = 0;
 let lastWin =``;
 let finalScore = 0;
+//let diceChoice = `white`;
+
 //restart
 const gameOver = () => {
     gamesPlayed ++;
@@ -84,8 +85,7 @@ newBtn.addEventListener('click', () =>{
 
 //roll button
 rollBtn.addEventListener(`click`, () => {
-        //show a blurred dice image for 100ms
-        //then start the Randomiser function
+        //show a blurred dice image for 100ms then start the Randomiser function
         diceImg.src=`img2/${diceChoice}Dice7.png`;
         setTimeout('Randomiser();', 100);
 });

@@ -18,7 +18,7 @@ const blueBtn = document.getElementById(`blueBtn`);
 const pinkBtn = document.getElementById(`pinkBtn`);
 
 let diceChoice = "white";
-let randomNumber = 0;
+let randomNumber = 0; //local?
 let score = 0;
 let timesRolled = 0;
 let padding = 100;
@@ -36,13 +36,13 @@ closeMBtn.addEventListener(`click`, () => {
     modalBG.style.visibility= `hidden`;
 });
 
+
 rollBtn.addEventListener(`click`, () => {
     if (score <20 & randomNumber !=1){
         diceImg.style.opacity=`1`;
-        //show a blurred dice image for 100ms
-        //then start the Randomiser function
         diceImg.src=`img2/${diceChoice}Dice7.png`;
-        setTimeout('Randomiser();', 100);
+        //show a blurred dice image for 100ms then start the Randomiser function
+        setTimeout('randomiser();', 100);
     } else {
         //if game is over, reset everything
         score = 0;
@@ -56,7 +56,7 @@ rollBtn.addEventListener(`click`, () => {
     }
 });
 
-const Randomiser = () => {
+const randomiser = () => {
     //generate random number between 1 and 6
     i=Math.floor((Math.random() * 6) + 1);
     randomNumber = i;
