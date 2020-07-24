@@ -8,6 +8,7 @@ const p1CurrentShow = document.getElementById("p1CurrentShow");
 const p2CurrentShow = document.getElementById("p2CurrentShow");
 const p1Title = document.getElementById("p1Title");
 const p2Title = document.getElementById("p2Title");
+
 //history
 const list = document.getElementById('past');
 const history = document.getElementById(`history`);

@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,36 +8,43 @@
     <title>1 Player Dice Game!</title>
 </head>
 
-<body>  
-<div class="overallContainer">
-    <div id="title"><h1>Dice Game</h1></div>
-    <div id="currentScore">Roll To Score</div>
-    <div id="winLoose"></div>
-    <div id="dice"><img id="diceImg" src="img2/whitedice1.png"></div>
-    <div id="roll"><div id="rollBtn">Roll</div></div>
-    <div id="more">
-        <div id="pickBtn">Change Dice</div>
-        <br><br>
-        <div id="histBtn">Win / Loose History</div>
+<body>
+    <div class="overallContainer">
+        <div id="title">
+            <h1>Dice Game</h1>
+        </div>
+        <div id="currentScore">Tap Roll To Start!</div>
+        <div id="winLoose"></div>
+        <div id="dice"><img id="diceImg" src="img2/whitedice1.png"></div>
+        <div id="roll">
+            <div id="rollBtn">Roll</div>
+        </div>
+        <div id="more">
+            <div id="pickBtn">Change Dice</div>
+            <br><br>
+            <div id="histBtn">Win / Lose History</div>
+        </div>
     </div>
-</div>
 
-<div id="modal-bg">
-    <div id="history"><h2>History</h2>
-        <ol id="past">
-        </ol>
-        <div id="closeModal">x</div>
+    <div id="modal-bg">
+        <div id="history">
+            <h2>History</h2>
+            <ol id="past">
+            </ol>
+            <div id="closeModal">x</div>
+        </div>
     </div>
-</div>
 
-<div id="modal-bg2">
-    <div id="diceChoice"><h2>Pick Your Dice</h2>
-        <img id="whiteBtn" src="img2/White_DiceIcon.png">
-        <img id="blueBtn" src="img2/BlueDiceIcon.png">
-        <img id="pinkBtn" src="img2/PinkDiceIcon.png">
+    <div id="modal-bg2">
+        <div id="diceChoice">
+            <h2>Pick Your Dice</h2>
+            <img id="whiteBtn" src="img2/White_DiceIcon.png">
+            <img id="blueBtn" src="img2/BlueDiceIcon.png">
+            <img id="pinkBtn" src="img2/PinkDiceIcon.png">
+        </div>
     </div>
-</div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
